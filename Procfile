@@ -1,1 +1,1 @@
-web: lein run -m demo.web
+web: lein run -m tutorial.template1
