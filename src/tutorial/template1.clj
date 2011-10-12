@@ -3,7 +3,7 @@
   (:use [net.cgrand.moustache :only [app]]
         [tutorial.utils :only [run-server render-to-response]]))
 
-(html/deftemplate index "tutorial/template1.html"
+(html/deftemplate index "template1.html"
   [ctxt]
   [:p#message] (html/content (:message ctxt)))
 
