@@ -20,4 +20,4 @@
    [&]        {:status 404
                :body "Page Not Found"}))
  
-(defonce *server* (run-server routes :keys [(Integer/parseInt (System/getenv "PORT"))]))
+(defonce *server* (run-server routes))
