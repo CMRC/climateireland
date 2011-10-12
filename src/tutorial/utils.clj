@@ -32,7 +32,7 @@
     :index-files? true
     :html-files? true}))
 
-(defn run-server* [app & (Integer/parseInt (System/getenv "PORT"))]
+(defn run-server* [app & {:keys [port] :or {port (Integer/parseInt (System/getenv "PORT"))}}]
   (let [nses (if-let [m (meta app)]
                [(-> (:ns (meta app)) str symbol)]
                [])]
