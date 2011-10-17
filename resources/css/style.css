@@ -1,38 +1,58 @@
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+body {
+	width: 100%;
+	height: 95%;
+	margin: 0px;
+	padding: 0px;
+	background-position: top center;
+	background-repeat: no-repeat;
+	font-family: "GentiumRegular", Georgia, "Times New Roman", serif;
+	line-height: 130%;
+	color: #252525;
+	background-color: #ffffff;
+}
+#wrapper {	
+    width: 1530px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 20px;
+    background-color: #199;
+}
+#banner {
+    width: 100%;
+    font-size: 72px;
+    background-color: #499;
+    text-align: center;
+}
 #title {
-	position:absolute;
-	width:80%;
-	height:15%;
-	z-index:1;
-	background-color: #C99;
-	overflow: hidden;
-	left: 10%;
-	top: 5%;
-	right: 10%;
-	bottom: 95%;
+    top: 50%;
+}
+#buttons {
+    width: 100%;
+    height: 30px;
 }
 #scroll {
-	position:absolute;
-	width:80%;
-	height:5%;
-	z-index:2;
-	left: 10%;
-	top: 20%;
-	right: 10%;
-	bottom: 80%;
+	width:100%;
+	height:30px;
 	background-color: #B99;
 }
 .hbutton {
 	position: relative;
-	height: 20%;
+	height: 10em;
 	width: 20%;
-	top: 80%;
 	bottom: 0%;
 	float: right;
 	overflow: hidden;
 	text-align: center;
 }
 #col1 {
-	background-color: #FFF;
+	background-color: #F99;
 	float: right;
 	height: 100%;
 	width: 20%;
@@ -40,66 +60,55 @@
 	top: 0%;
 	bottom: 0%;
 }
-#col2 {
-	background-color: #09F;
+#blurb {
+	background-color: #D99;
 	float: right;
 	height: 100%;
 	width: 40%;
 	position: relative;
 }
 .col {
-	background-color: #C90;
+	background-color: #A99;
 	float: right;
 	height: 100%;
 	width: 40%;
 	position: relative;
 }
 .col1b {
-	background-color: #69C;
+	background-color: #E99;
 	position: relative;
-	height: 33.3%;
+	height: 200px;
 	width: 100%;
 	top: 0%;
 	bottom: 66.7%;
 }
 .colb2 {
 	position: relative;
-	height: 33.3%;
+	height: 200px;
 	width: 100%;
 	bottom: 0%;
-	background-color: #39F;
+	background-color: #999;
 }
 #main {
-	position:absolute;
-	width:80%;
-	height:60%;
-	z-index:3;
-	left: 10%;
-	top: 25%;
-	right: 10%;
+	width:100%;
+	height:600px;
 	background-color: #C99;
 }
 .colb3 {
-	background-color: #F06;
+	background-color: #899;
 	position: relative;
-	height: 33%;
+	height: 200px;
 	width: 100%;
 	top: 0%;
 	bottom: 66.7%;
 }
 #foot {
-	position:absolute;
-	width:80%;
-	height:10%;
-	z-index:4;
-	left: 10%;
-	right: 10%;
-	top: 85%;
+	width:100%;
+	height:200px;
 }
 .brow {
-	background-color: #090;
-	position: relative;
-	height: 100%;
-	width: 33.3%;
+	background-color: #799;
+	height: 100px;
+	width: 510px;
 	float: right;
 }
