@@ -6,7 +6,7 @@
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
-  [:div#blurb] (maybe-content (:message ctxt) "hello"))
+  [:div#blurb] (maybe-content (:message ctxt)))
 
 ;; ========================================
 ;; The App
