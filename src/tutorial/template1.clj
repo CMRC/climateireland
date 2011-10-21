@@ -2,13 +2,12 @@
   (:require [net.cgrand.enlive-html :as html])
   (:use [net.cgrand.moustache :only [app]]
         [ring.util.response :only [response file-response]]
-        [hiccup.core]
         [tutorial.utils]))
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
-  [:div#blurb] (maybe-content (:blurb ctxt))
-  [:div#map] (maybe-content (:map ctxt)))
+  [:#blurb] (maybe-content (:blurb ctxt))
+  [:#map] (maybe-content (:map ctxt)))
 
 ;; ========================================
 ;; The App
@@ -20,7 +19,7 @@
                          (index {})))
    ["change"] (fn [req] (render-to-response
                          (index {:blurb "We changed the message!"
-                                 :map (html [:img "http://cmrcprojects.ucc.ie/coralfish/r"])})))
+                                 :map (content "<img src='http://cmrcprojects.ucc.ie/coralfish/r' />"])})))
    [&]        {:status 404
                :body "Page Not Found"}
    ["css"]    (file-response "tutorial/css")))
