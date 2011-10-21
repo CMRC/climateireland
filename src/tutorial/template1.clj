@@ -1,12 +1,11 @@
 (ns tutorial.template1
   (:require [net.cgrand.enlive-html :as html])
   (:use [net.cgrand.moustache :only [app]]
-        [ring.util.response :only [response file-response]]
         [tutorial.utils :only [run-server render-to-response]]))
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
-  [:div#blurb] (html/content (:message ctxt)))
+  [:div#blurb] (maybe-content (:message ctxt)))
 
 ;; ========================================
 ;; The App
