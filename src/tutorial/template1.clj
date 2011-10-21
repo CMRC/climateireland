@@ -19,7 +19,7 @@
                          (index {})))
    ["change"] (fn [req] (render-to-response
                          (index {:blurb "We changed the message!"
-                                 :map (html/content "<img src='http://cmrcprojects.ucc.ie/coralfish/r' />")})))
+                                 :map (str (html/emit* (html/content "<img src='http://cmrcprojects.ucc.ie/coralfish/r' />")))})))
    [&]        {:status 404
                :body "Page Not Found"}
    ["css"]    (file-response "tutorial/css")))
