@@ -1,6 +1,7 @@
 (ns tutorial.template1
   (:require [net.cgrand.enlive-html :as html])
   (:use [net.cgrand.moustache :only [app]]
+        [ring.util.response :only [response file-response]]
         [tutorial.utils :only [run-server render-to-response]]))
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
@@ -18,6 +19,7 @@
    ["change"] (fn [req] (render-to-response
                          (index {:message "We changed the message!"})))
    [&]        {:status 404
-               :body "Page Not Found"}))
+               :body "Page Not Found"}
+   ["css"]    (file-response "tutorial/css")))
  
 (defonce *server* (run-server routes))
