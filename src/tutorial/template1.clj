@@ -3,9 +3,9 @@
   (:use [net.cgrand.moustache :only [app]]
         [tutorial.utils :only [run-server render-to-response]]))
 
-(html/deftemplate index "tutorial/template1.html"
+(html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
-  [:p#message] (html/content (:message ctxt)))
+  [:div#blurb] (html/content (:message ctxt)))
 
 ;; ========================================
 ;; The App
