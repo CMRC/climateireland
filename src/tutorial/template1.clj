@@ -6,7 +6,8 @@
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
-  [:div#blurb] (maybe-content (:message ctxt)))
+  [:div#blurb] (maybe-content (:blurb ctxt))
+  [:div#map] (maybe-content (:map ctxt)))
 
 ;; ========================================
 ;; The App
@@ -17,7 +18,8 @@
    [""]       (fn [req] (render-to-response
                          (index {})))
    ["change"] (fn [req] (render-to-response
-                         (index {:message "We changed the message!"})))
+                         (index {:blurb "We changed the message!"
+                                 :map "<img src='http://cmrcprojects.ucc.ie/coralfish/r'/>"})))
    [&]        {:status 404
                :body "Page Not Found"}
    ["css"]    (file-response "tutorial/css")))
