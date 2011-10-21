@@ -1,7 +1,7 @@
 (ns tutorial.template1
   (:require [net.cgrand.enlive-html :as html])
   (:use [net.cgrand.moustache :only [app]]
-        [tutorial.utils :only [run-server render-to-response]]))
+        [tutorial.utils]]))
 
 (html/deftemplate index "tutorial/CI_Initial_2.html"
   [ctxt]
