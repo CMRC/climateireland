@@ -1,9 +1,6 @@
-(defproject enlive-tutorial "0.1.0"
-  :description "Enlive Tutorial"
-  :dependencies [[org.clojure/clojure "1.2.0"]
-                 [org.clojure/clojure-contrib "1.2.0"]
-                 [enlive "1.0.0"]
-                 [ring "0.2.5"]
-                 [net.cgrand/moustache "1.0.0"]]
-  :dev-dependencies [[swank-clojure "1.3.0"]]
-  :main tutorial.template1)
+(defproject hello-noir "0.1.0-SNAPSHOT"
+            :description "FIXME: write this!"
+            :dependencies [[org.clojure/clojure "1.3.0"]
+                           [enlive "1.0.0"]
+                           [noir "1.2.0"]]
+            :main ci.server)
