@@ -4,8 +4,7 @@
         hiccup.core
         hiccup.page-helpers
 	net.cgrand.enlive-html
-        netcdf.geo-grid
-        clojure.pprint))
+        ci.views.netcdfmap))
 
 (deftemplate welcome "ci/views/welcome.html"  
   [blurb map]
@@ -17,6 +16,7 @@
   (content map))
 
 (defpage "/welcome" []
-  (welcome "Welcome to hello-noir"
-           (with-open-geo-grid [grid "http://badc.nerc.ac.uk/help/formats/netcdf/simple.nc" "temp"]
-             (apply str (interpose \, (read-seq grid))))))
+  (welcome {:tag :img
+            :attrs {:src "http://cmrcprojects.ucc.ie/coralfish/r"}}
+           {:tag :img
+            :attrs {:src netcdfmap}}))
