@@ -4,11 +4,12 @@
         hiccup.core
         hiccup.page-helpers
 	net.cgrand.enlive-html
-        ci.views.netcdfmap))
+        ci.views.netcdfmap)
+  (:import java.net.URLDecoder))
 
 (deftemplate welcome "ci/views/welcome.html"  
   [blurb map]
-
+  
   [:#blurb]
   (content blurb)
   
