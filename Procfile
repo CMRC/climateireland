@@ -1,1 +1,1 @@
-web: lein run -m tutorial.template1
+web: lein run -m ci.server
