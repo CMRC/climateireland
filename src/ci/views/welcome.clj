@@ -1,5 +1,7 @@
 (ns ci.views.welcome
-  (:require [noir.content.pages :as pages])
+  (:require [noir.content.pages :as pages]
+            [noir.response :as response])
+
   (:use noir.core
         hiccup.core
         hiccup.page-helpers
@@ -21,3 +23,15 @@
             :attrs {:src "http://cmrcprojects.ucc.ie/coralfish/r"}}
            {:tag :img
             :attrs {:src netcdfmap}}))
+
+(deftemplate kml "ci/views/hello.kml"
+  []
+
+  [:Placemark]
+  (clone-for [point netcdf-kml]
+
+             [:name]
+             (content point)))
+  
+(defpage "/kml" []
+  (kml))
