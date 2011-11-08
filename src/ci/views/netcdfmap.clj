@@ -40,12 +40,15 @@
                     :coordinates (str (+ 0.5 long) "," (+ 0.5 lat))
                     :lat lat
                     :long long))
-                (cross (range 50 57) (range -11 -4))))))
+                (cross (range 51 56) (range -10 -5))))))
 
 (def netcdf-gmaps
   (let [mean (/ (reduce #(+ %1 %2) 0 (map #(Float/parseFloat (% :value)) netcdf-kml))
                 (count netcdf-kml))]
-    (doall (map #(str "&markers=color:"
-                      (if (< (Float/parseFloat (% :value)) mean) "blue" "red")
-                      "|label:x|" (% :lat) "," (% :long))
+    (doall (map #(str "&path=color:0x00000000|weight:5|fillcolor:"
+                      (if (< (Float/parseFloat (% :value)) mean) "0xFFFF0033" "red")
+                      "|" (% :lat) "," (% :long)
+                      "|" (+ 1 (% :lat)) "," (% :long)
+                      "|" (+ 1 (% :lat)) "," (+ 1 (% :long))
+                      "|" (% :lat) "," (+ 1 (% :long)))
                 netcdf-kml))))
