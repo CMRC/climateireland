@@ -1,5 +1,5 @@
 (defproject climateireland "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
+  :description "Climate Ireland Climate Information Platform"
   :repositories {"osgeo-geotools" "http://download.osgeo.org/webdav/geotools"}
   
   :dependencies [[org.clojure/clojure "1.3.0"]

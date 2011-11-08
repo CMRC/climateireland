@@ -29,9 +29,10 @@
 
   [:Placemark]
   (clone-for [point netcdf-kml]
-
              [:name]
-             (content point)))
+             (content (:value point))
+             [:Point :coordinates]
+             (content (:coordinates point))))
   
 (defpage "/kml" []
   (kml))
