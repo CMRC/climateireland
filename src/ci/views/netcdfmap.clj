@@ -37,6 +37,15 @@
                                                               (> (.getLongitude (% :location)) long)
                                                               (< (.getLongitude (% :location)) (+ 1 long)))
                                                   (filter-records (read-seq grid))))))
-                    :coordinates (str (+ 0.5 long) "," (+ 0.5 lat))))
+                    :coordinates (str (+ 0.5 long) "," (+ 0.5 lat))
+                    :lat lat
+                    :long long))
                 (cross (range 50 57) (range -11 -4))))))
 
+(def netcdf-gmaps
+  (let [mean (/ (reduce #(+ %1 %2) 0 (map #(Float/parseFloat (% :value)) netcdf-kml))
+                (count netcdf-kml))]
+    (doall (map #(str "&markers=color:"
+                      (if (< (Float/parseFloat (% :value)) mean) "blue" "red")
+                      "|label:x|" (% :lat) "," (% :long))
+                netcdf-kml))))
