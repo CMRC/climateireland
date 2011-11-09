@@ -13,7 +13,7 @@
         (map list s)))))
 
 (def netcdfmap
-  (with-open-geo-grid [grid "/home/anthony/CLM4-Barry/CLM4_Data/CLM4_A1B_1/CLM4_A1B_1_mean.nc" "PS"]
+  (with-open-geo-grid [grid "resources/public/CLM4-Barry/CLM4_Data/CLM4_A1B_1/CLM4_A1B_1_mean.nc" "PS"]
     (apply str "http://maps.googleapis.com/maps/api/staticmap?sensor=true&size=400x400"
            (map #(str "&markers=color:blue|label:" (% :value)
                       "|" (.getLatitude (% :location))
@@ -21,7 +21,7 @@
                 (read-seq grid)))))
   
 (def netcdf-kml
-  (with-open-geo-grid [grid "/home/anthony/CLM4-Barry/CLM4_Data/CLM4_A1B_1/CLM4_A1B_1_mean.nc" "PS"]
+  (with-open-geo-grid [grid "resources/public/CLM4-Barry/CLM4_Data/CLM4_A1B_1/CLM4_A1B_1_mean.nc" "PS"]
     (doall (map (fn [[lat long]]
                   (assoc {}
                     :value (str (/ (reduce #(+ %1 %2)
