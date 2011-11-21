@@ -9,7 +9,9 @@
                  [org.geotools/gt-main "2.6.4"]
                  [org.geotools/gt-shapefile "2.6.4"]
                  [org.geotools/gt-epsg-hsql "2.6.4"]
-                 [org.geotools/gt-swing "2.6.4"]]
+                 [org.geotools/gt-swing "2.6.4"]
+                 [org.clojars.pallix/analemma "1.0.0-SNAPSHOT"]
+                 [ring-basic-authentication "0.0.1"]]
   :dev-dependencies [[swank-clojure "1.4.0-SNAPSHOT"]]
   :main ci.server)
 
